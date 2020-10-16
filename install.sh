@@ -27,11 +27,19 @@ linkDotFile()
             mv -v "$OUTPUT" "$OUTPUT.bak"
         fi
     fi
+    OUTPUT_DIR=$(dirname "$OUTPUT");
+    if [ ! -d "$OUTPUT_DIR" ]; then
+        mkdir -p "$OUTPUT_DIR"
+    fi
     ln -s "$INPUT" "$OUTPUT"
 }
 
-git clone https://github.com/tmux-plugins/tpm "$SCRIPT_PATH/tmux/.tmux"
+if [ -d "$SCRIPT_PATH/tmux/.tmux/plugins/tpm" ]; then
+    rm -rf "$SCRIPT_PATH/tmux/.tmux/plugins/tpm" && echo "removed: '$SCRIPT_PATH/tmux/.tmux/plugins/tpm'"
+fi
+
+git clone https://github.com/tmux-plugins/tpm "$SCRIPT_PATH/tmux/.tmux/plugins/tpm"
 
 linkDotFile "$SCRIPT_PATH/tmux/.tmux.conf" "$HOME/.tmux.conf"
 linkDotFile "$SCRIPT_PATH/tmux/.tmux" "$HOME/.tmux"
-
+linkDotFile "$SCRIPT_PATH/fish/config.fish" "$HOME/.config/fish/config.fish"
