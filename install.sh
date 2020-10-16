@@ -2,6 +2,12 @@
 
 SCRIPT_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )";
 
+which=$(which git);
+if [ ${#which} -lt 1 ]; then
+    echo "Missing access to \"git\" command.";
+    exit 1;
+fi
+
 linkDotFile()
 {
     INPUT=$1
@@ -23,6 +29,8 @@ linkDotFile()
     fi
     ln -s "$INPUT" "$OUTPUT"
 }
+
+git clone https://github.com/tmux-plugins/tpm "$SCRIPT_PATH/tmux/.tmux"
 
 linkDotFile "$SCRIPT_PATH/tmux/.tmux.conf" "$HOME/.tmux.conf"
 linkDotFile "$SCRIPT_PATH/tmux/.tmux" "$HOME/.tmux"
