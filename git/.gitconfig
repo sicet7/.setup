@@ -1,0 +1,22 @@
+[user]
+    email = example@example.com
+    name = Your Name
+[alias]
+    assume = update-index --assume-unchanged
+    unassume = update-index --no-assume-unchanged
+    assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+    ours = "!f() { git checkout --ours $@ && git add $@; }; f"
+    theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+    unstage = reset HEAD
+    recreate = "!f() { [[ -n $@ ]] && git checkout \"$@\" && git unpublish && git checkout master && git branch -D \"$@\" && git checkout -b \"$@\" && git publish; }; f"
+    lcf = diff-tree --no-commit-id --name-only -r
+    rr = "!f() { git remote update \"$1\" --prune; }; f"
+    diww = "!f() { git diff -w \"$1^\" \"$1\"; }; f"
+    cho = checkout
+    st = status
+    chp = cherry-pick
+[core]
+    fileMode = false
+    symlinks = false
+[pull]
+    ff = only
