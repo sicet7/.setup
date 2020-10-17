@@ -1,5 +1,7 @@
 #!/bin/sh
 
+sudo apt update
+
 SCRIPT_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )";
 
 installIfMissing()
@@ -63,6 +65,9 @@ if [ -f "$FISHER_FILE" ]; then
 fi
 wget https://git.io/fisher --output-document="$FISHER_FILE"
 
+#Git Config
+linkDotFile "$SCRIPT_PATH/git/.gitconfig" "$HOME/.gitconfig"
+
 #TMUX Setup
 linkDotFile "$SCRIPT_PATH/tmux/.tmux.conf" "$HOME/.tmux.conf"
 linkDotFile "$SCRIPT_PATH/tmux/.tmux" "$HOME/.tmux"
@@ -73,6 +78,7 @@ linkDotFile "$SCRIPT_PATH/fish/aliases.fish" "$HOME/.config/fish/aliases.fish"
 linkDotFile "$FISHER_FILE" "$HOME/.config/fish/functions/fisher.fish"
 
 #Run TPM plugin installer
+export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
 bash ~/.tmux/plugins/tpm/bin/install_plugins
 
 #Run Fisher Plugin installer

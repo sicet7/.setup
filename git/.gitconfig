@@ -1,6 +1,6 @@
 [user]
-    email = example@example.com
-    name = Your Name
+    email = git@sicet7.com
+    name = Martin René Sørensen
 [alias]
     assume = update-index --assume-unchanged
     unassume = update-index --no-assume-unchanged
