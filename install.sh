@@ -65,6 +65,19 @@ if [ -f "$FISHER_FILE" ]; then
 fi
 wget https://git.io/fisher --output-document="$FISHER_FILE"
 
+#Download Composer
+COMPOSER_FILE="$SCRIPT_PATH/composer.phar"
+if [ ! -d $(dirname "$COMPOSER_FILE") ]; then
+    mkdir -p $(dirname "$COMPOSER_FILE")
+fi
+if [ -f "$COMPOSER_FILE" ]; then
+    rm -vf "$COMPOSER_FILE"
+fi
+wget https://getcomposer.org/composer-stable.phar --output-document="$COMPOSER_FILE"
+
+#Composer
+linkDotFile "$COMPOSER_FILE" "$HOME/.local/bin/composer"
+
 #Git Config
 linkDotFile "$SCRIPT_PATH/git/.gitconfig" "$HOME/.gitconfig"
 
