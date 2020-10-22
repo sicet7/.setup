@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#sudo apt update
+sudo apt update
 
 EXEC_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )";
 
@@ -11,6 +11,7 @@ include() {
     unset SP
 }
 
+# Installer Functions
 include "$EXEC_PATH/installer/installIfMissing.sh"
 include "$EXEC_PATH/installer/linkDotFile.sh"
 
