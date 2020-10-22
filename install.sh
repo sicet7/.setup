@@ -47,6 +47,7 @@ installIfMissing "ranger" "ranger"
 installIfMissing "tmux" "tmux"
 installIfMissing "bash" "bash"
 installIfMissing "wget" "wget"
+installIfMissing "xclip" "xclip"
 
 #Download TPM
 TPM_DIR="$SCRIPT_PATH/tmux/.tmux/plugins/tpm"
