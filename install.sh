@@ -90,6 +90,7 @@ linkDotFile "$SCRIPT_PATH/tmux/.tmux" "$HOME/.tmux"
 linkDotFile "$SCRIPT_PATH/fish/config.fish" "$HOME/.config/fish/config.fish"
 linkDotFile "$SCRIPT_PATH/fish/aliases.fish" "$HOME/.config/fish/aliases.fish"
 linkDotFile "$FISHER_FILE" "$HOME/.config/fish/functions/fisher.fish"
+linkDotFile "$SCRIPT_PATH/fish/fishfile" "$HOME/.config/fish/fishfile"
 
 #Run TPM plugin installer
 export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
