@@ -3,6 +3,7 @@
 # Dependencies
 installIfMissing "fish" "fish"
 installIfMissing "wget" "wget"
+installIfMissing "ranger" "ranger"
 
 # Download Fisher
 FISHER_FILE="$SP/src/functions/fisher.fish"
