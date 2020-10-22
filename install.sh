@@ -4,41 +4,8 @@ sudo apt update
 
 SCRIPT_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )";
 
-installIfMissing()
-{
-    PACKAGE=$1
-    COMMAND=$2
-    which=$(which "$COMMAND");
-    if [ ${#which} -lt 1 ]; then
-        sudo apt install "$PACKAGE" -y
-    fi
-}
-
-linkDotFile()
-{
-    INPUT=$1
-    OUTPUT=$2
-    if [ ! -f "$INPUT" ] && [ ! -d "$INPUT" ]; then
-        echo "Input not found: $INPUT"
-        exit 1;
-    fi
-    if [ -L "$INPUT" ]; then
-        echo "Input cannot be a symlink!"
-        exit 1;
-    fi
-    if [ -f "$OUTPUT" ] || [ -d "$OUTPUT" ]; then
-        if [ -L "$OUTPUT" ]; then
-            rm -v "$OUTPUT"
-        else
-            mv -v "$OUTPUT" "$OUTPUT.bak"
-        fi
-    fi
-    OUTPUT_DIR=$(dirname "$OUTPUT");
-    if [ ! -d "$OUTPUT_DIR" ]; then
-        mkdir -p "$OUTPUT_DIR"
-    fi
-    ln -s "$INPUT" "$OUTPUT" && echo "linked: $OUTPUT -> $INPUT"
-}
+. "$SCRIPT_PATH/installer/installIfMissing.sh"
+. "$SCRIPT_PATH/installer/linkDotFile.sh"
 
 #Install Dependencies from apt
 installIfMissing "git" "git"
