@@ -1,9 +1,20 @@
 #!/bin/sh
 
-installIfMissing "tmux" "tmux"
-installIfMissing "git" "git"
-installIfMissing "bash" "bash"
-installIfMissing "xclip" "xclip"
+if ! hasCommand tmux; then
+    installPackage "tmux"
+fi
+
+if ! hasCommand git; then
+    installPackge "git"
+fi
+
+if ! hasCommand bash; then
+    installPackage "bash"
+fi
+
+if ! hasCommand xclip; then
+    installPackage "xclip"
+fi
 
 #Download TPM
 TPM_DIR="$SP/src/.tmux/plugins/tpm"

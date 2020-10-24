@@ -1,9 +1,16 @@
 #!/bin/sh
 
-# Dependencies
-installIfMissing "fish" "fish"
-installIfMissing "wget" "wget"
-installIfMissing "ranger" "ranger"
+if ! hasCommand fish; then
+    installPackage "fish"
+fi
+
+if ! hasCommand wget; then
+    installPackage "wget"
+fi
+
+if ! hasCommand ranger; then
+    installPackage "ranger"
+fi
 
 # Download Fisher
 FISHER_FILE="$SP/src/functions/fisher.fish"

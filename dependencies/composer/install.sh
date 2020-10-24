@@ -1,6 +1,8 @@
 #!/bin/sh
 
-installIfMissing "wget" "wget"
+if ! hasCommand wget; then
+    installPackage "wget";
+fi
 
 #Download Composer
 COMPOSER_FILE="$SP/src/composer.phar"
