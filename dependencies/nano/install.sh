@@ -26,5 +26,4 @@ fi
 git clone -c core.symlinks=true https://github.com/scopatz/nanorc.git "$NANO_SYNTAX_DIR"
 
 linkDotFile "$SP/src/.nanorc" "$HOME/.nanorc"
-
-echo "include $NANO_SYNTAX_DIR/*.nanorc" >> ~/.nanorc
+linkDotFile "$NANO_SYNTAX_DIR" "$HOME/.nano/syntax"

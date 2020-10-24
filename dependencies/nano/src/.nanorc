@@ -3,5 +3,4 @@ set autoindent
 set tabsize 4
 set tabstospaces
 set numbercolor white
-include /home/sicet7/.dotfiles/dependencies/nano/src/syntax/*.nanorc
-include /home/sicet7/.dotfiles/dependencies/nano/src/syntax/*.nanorc
+include ~/.nano/syntax/*.nanorc
