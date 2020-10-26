@@ -2,10 +2,10 @@ function tar-ls
     set FILE $argv[1];
     switch (file --mime-type -b "$FILE")
     case "application/gzip"
-        tar --gzip --list --verbose --file="$FILE"
+        tar --gzip --list --file="$FILE"
     case "application/x-bzip2"
-        tar --bzip2 --list --verbose --file="$FILE"
+        tar --bzip2 --list --file="$FILE"
     case '*'
-        tar --list --verbose --file="$FILE"
+        tar --list --file="$FILE"
     end
 end
