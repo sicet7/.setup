@@ -1,4 +1,4 @@
-function tar-e
+function tar-x
     set FILE $argv[1];
     set OUTPUT $argv[2];
 
