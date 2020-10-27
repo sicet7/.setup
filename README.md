@@ -2,6 +2,8 @@
 
 ### Todo
 
+* TODO: Optional dependencies
+* TODO: Install & Setup PHP
 * TODO: Install & Setup NeoVim 
 * TODO: MAC Support
 
