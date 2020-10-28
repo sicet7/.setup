@@ -27,6 +27,9 @@ linkDotFile "$SP/src/config.fish" "$HOME/.config/fish/config.fish"
 linkDotFile "$SP/src/aliases.fish" "$HOME/.config/fish/aliases.fish"
 linkDotFile "$FISHER_FILE" "$HOME/.config/fish/functions/fisher.fish"
 linkDotFile "$SP/src/fishfile" "$HOME/.config/fish/fishfile"
+linkDotFile "$SP/src/functions/tar-ls.fish" "$HOME/.config/fish/functions/tar-ls.fish"
+linkDotFile "$SP/src/functions/tar-x.fish" "$HOME/.config/fish/functions/tar-x.fish"
+
 
 # Run Fisher Plugin installer
 fish -c fisher
