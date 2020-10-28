@@ -3,6 +3,7 @@
 ### Todo
 
 * TODO: Optional dependencies
+* TODO: Install & Setup GoTop(https://github.com/xxxserxxx/gotop)
 * TODO: Install & Setup Docker
 * TODO: Install & Setup Docker-Compose
 * TODO: Install & Setup PHP
