@@ -48,6 +48,7 @@ fi
 # TODO: add MAC update command?
 
 # Installer Functions
+include "$EXEC_PATH/installer/promptUser.sh"
 include "$EXEC_PATH/installer/linkDotFile.sh"
 include "$EXEC_PATH/installer/installPackage.sh"
 

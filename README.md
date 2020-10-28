@@ -2,7 +2,6 @@
 
 ### Todo
 
-* TODO: Optional dependencies
 * TODO: Install & Setup GoTop(https://github.com/xxxserxxx/gotop)
 * TODO: Install & Setup Docker
 * TODO: Install & Setup Docker-Compose
@@ -14,6 +13,8 @@
 
 ### Done
 
+> * DONE: Optional dependencies
 > * DONE: Install & Setup Tmux
 > * DONE: Install & Setup Fish
 > * DONE: Install & Setup Nano
+> * DONE: Install & Setup Ranger
