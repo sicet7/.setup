@@ -111,4 +111,10 @@ makeSymlink()
     ln -s "$TARGET" "$OUTPUT" && echo "link: $OUTPUT -> $TARGET"
 }
 
+if ! hasCommand wget; then
+    if [ "$CURRENT_OS" = "Ubuntu" ]; then
+        sudo apt install wget
+    fi
+    # TODO MAC install wget
+fi
 
