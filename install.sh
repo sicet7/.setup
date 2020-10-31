@@ -49,9 +49,13 @@ if ! hasCommand mv; then
     exit 1;
 fi
 
+if ! hasCommand sha256sum; then
+    echo 'Missing command "sha256sum"';
+    exit 1;
+fi
+
 # Executable path
 EXEC_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )";
-
 
 # Detect OS
 CURRENT_OS="";
@@ -73,7 +77,7 @@ if [ "$CURRENT_OS" != "Darwin" ] && [ "$CURRENT_OS" != "Ubuntu" ]; then
     exit 1;
 fi
 
-# Install build files for fish
+# Install build dependencies for fish
 if [ "$CURRENT_OS" = "Ubuntu" ]; then
     sudo apt update && sudo apt install -y build-essential
 fi
@@ -108,16 +112,3 @@ makeSymlink()
 }
 
 
-
-# Installer Functions
-include "$EXEC_PATH/installer/promptUser.sh"
-include "$EXEC_PATH/installer/installPackage.sh"
-
-# Dependencies
-
-include "$EXEC_PATH/dependencies/git/install.sh"
-include "$EXEC_PATH/dependencies/fish/install.sh"
-include "$EXEC_PATH/dependencies/tmux/install.sh"
-include "$EXEC_PATH/dependencies/composer/install.sh"
-include "$EXEC_PATH/dependencies/nano/install.sh"
-include "$EXEC_PATH/dependencies/ranger/install.sh"
