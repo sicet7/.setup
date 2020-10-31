@@ -1,5 +1,7 @@
 #!/bin/sh
 
+FISH_VERSION="3.1.2"
+
 hasCommand() {
     che=$(which "$1")
     if [ ${#che} -lt 1 ]; then
@@ -49,15 +51,20 @@ if ! hasCommand mv; then
     exit 1;
 fi
 
-if ! hasCommand sha256sum; then
-    echo 'Missing command "sha256sum"';
+if ! hasCommand readlink; then
+    echo 'Missing command "readlink"';
     exit 1;
 fi
 
-# Executable path
+if ! hasCommand basename; then
+    echo 'Missing command "basename"';
+    exit 1;
+fi
+
+# Get full path to this file.
 EXEC_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )";
 
-sudo apt update && sudo apt install -y build-essential
+sudo apt update && sudo apt install -y build-essential cmake ncurses-dev ncurses-dev libpcre2-dev gettext
 
 # Define symlink function
 makeSymlink()
@@ -86,4 +93,58 @@ makeSymlink()
     ln -s "$TARGET" "$OUTPUT" && echo "link: $OUTPUT -> $TARGET"
 }
 
+#Building fish from source
+if [ ! -d "$EXEC_PATH/src" ]; then
+    mkdir -p "$EXEC_PATH/src"
+fi
 
+FISH_SOURCE_DIR="$EXEC_PATH/src/fish/$FISH_VERSION"
+FISH_BUILD_DIR="$EXEC_PATH/build/fish/$FISH_VERSION"
+FISH_CURRENT_LINK="$EXEC_PATH/build/fish/current"
+
+if [ ! -d "$FISH_SOURCE_DIR" ]; then
+
+    # Download the version from github.
+    git clone --depth="1" --branch="$FISH_VERSION" https://github.com/fish-shell/fish-shell.git "$FISH_SOURCE_DIR"
+
+    # Installation output directory
+    if [ ! -d "$FISH_BUILD_DIR" ]; then
+        mkdir -p "$FISH_BUILD_DIR"
+    fi
+
+    # Storing our current directory.
+    BEFORE_BUILD_DIR=$(pwd);
+
+    # Build fish into the output directory and go back to the directory we were before.
+    cd "$FISH_SOURCE_DIR" && cmake -DCMAKE_INSTALL_PREFIX="$FISH_BUILD_DIR" && make && make install && cd "$BEFORE_BUILD_DIR"
+    unset BEFORE_BUILD_DIR
+
+    # If current link exists uninstall old version after linking the new one
+    if [ -L "$FISH_CURRENT_LINK" ]; then
+        PREVIOUS_VERSION_BUILD=$(readlink -f "$FISH_CURRENT_LINK");
+        makeSymlink "$FISH_BUILD_DIR" "$FISH_CURRENT_LINK"
+        echo "New Fish version($FISH_VERSION) successfully installed."
+
+        # Remove previous version build.
+        if [ -d "$PREVIOUS_VERSION_BUILD" ]; then
+            rm -rfv "$PREVIOUS_VERSION_BUILD"
+        fi
+
+        PREVIOUS_VERSION=$(basename "$PREVIOUS_VERSION_BUILD");
+        PREVIOUS_VERSION_SRC="$EXEC_PATH/src/fish/$PREVIOUS_VERSION"
+
+        # Remove previous version source.
+        if [ -d "$PREVIOUS_VERSION_SRC" ]; then
+            rm -rfv "$PREVIOUS_VERSION_SRC"
+        fi
+
+    else
+        # Make current link to the new version
+        makeSymlink "$FISH_BUILD_DIR" "$FISH_CURRENT_LINK"
+        echo "Fish version: $FISH_VERSION successfully installed."
+    fi
+
+else
+    makeSymlink "$FISH_BUILD_DIR" "$FISH_CURRENT_LINK"
+    echo "Fish Version: $FISH_VERSION is already installed.";
+fi
