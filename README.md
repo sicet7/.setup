@@ -1,5 +1,8 @@
 # dotfiles
 
+## Requirements
+* Git 1.7.10+
+
 ### Todo
 
 * TODO: Install & Setup GoTop(https://github.com/xxxserxxx/gotop)
