@@ -57,32 +57,7 @@ fi
 # Executable path
 EXEC_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )";
 
-# Detect OS
-CURRENT_OS="";
-testDarwin=$(uname -s | tr '[:upper:]' '[:lower:]');
-
-if [ "$testDarwin" = "darwin" ]; then
-    CURRENT_OS="Darwin";
-fi
-if [ "$CURRENT_OS" = "" ]; then
-    if [ -f "/etc/os-release" ]; then
-        . /etc/os-release
-        CURRENT_OS="$NAME";
-    fi
-fi
-
-echo "Detected OS: $CURRENT_OS"
-if [ "$CURRENT_OS" != "Darwin" ] && [ "$CURRENT_OS" != "Ubuntu" ]; then
-    echo "$CURRENT_OS, is currently not supported.";
-    exit 1;
-fi
-
-# Install build dependencies for fish
-if [ "$CURRENT_OS" = "Ubuntu" ]; then
-    sudo apt update && sudo apt install -y build-essential
-fi
-# TODO: add MAC install build utillities and maybe update??
-
+sudo apt update && sudo apt install -y build-essential
 
 # Define symlink function
 makeSymlink()
@@ -111,10 +86,4 @@ makeSymlink()
     ln -s "$TARGET" "$OUTPUT" && echo "link: $OUTPUT -> $TARGET"
 }
 
-if ! hasCommand wget; then
-    if [ "$CURRENT_OS" = "Ubuntu" ]; then
-        sudo apt install wget
-    fi
-    # TODO MAC install wget
-fi
 

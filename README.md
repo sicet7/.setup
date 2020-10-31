@@ -12,7 +12,6 @@
 * TODO: Install & Setup Mutagen
 * TODO: Install Tillix (https://gnunn1.github.io/tilix-web/)
 * TODO: Install & Setup NeoVim 
-* TODO: MAC Support
 
 ### Done
 
@@ -21,3 +20,7 @@
 > * DONE: Install & Setup Fish
 > * DONE: Install & Setup Nano
 > * DONE: Install & Setup Ranger
+
+### Scrapped
+
+> * TODO: MAC Support
