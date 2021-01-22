@@ -1,5 +1,10 @@
 #!/bin/sh
-RUN_ROOT="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )";
+echo "$SETUP_ROOT";
 
-echo "$INSTALL_ROOT";
-echo "$RUN_ROOT";
+if [ ! -d "$SETUP_ROOT" ]; then
+    echo "Failed to find setup files.";
+    exit 0;
+fi
+
+. "$SETUP_ROOT/installers/fish.sh" && \
+. "$SETUP_ROOT/installers/fisher.sh"

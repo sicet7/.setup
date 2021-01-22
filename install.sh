@@ -1,5 +1,5 @@
 #!/bin/sh
-INSTALL_ROOT="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )";
+SETUP_ROOT="$(cd "$(dirname "$0")" >/dev/null 2>&1; pwd -P)/.setup";
 sudo add-apt-repository ppa:git-core/ppa && \
 sudo apt update && \
 sudo apt install git && \
