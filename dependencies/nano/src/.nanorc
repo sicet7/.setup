@@ -1,6 +1,0 @@
-set linenumbers
-set autoindent
-set tabsize 4
-set tabstospaces
-set numbercolor white
-include ~/.nano/syntax/*.nanorc
