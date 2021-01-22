@@ -1,4 +1,7 @@
-# setup
+# Setup for Ubuntu 20.04
+
+`curl -s https://raw.githubusercontent.com/sicet7/.setup/master/install.sh | sh`
+
 
 ### Todo
 
