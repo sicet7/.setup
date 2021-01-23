@@ -17,4 +17,5 @@ mkdir -p "$HOME/.config/fish/functions" && \
 cp -rv "$SETUP_ROOT/config/fish/functions/." "$HOME/.config/fish/functions/" && \
 cp -v "$SETUP_ROOT/config/fish/config.fish" "$HOME/.config/fish/config.fish" && \
 cp -v "$SETUP_ROOT/config/fish/aliases.fish" "$HOME/.config/fish/aliases.fish" && \
+if [ \( -f "/usr/local/bin/fish" \) -a \( "$(grep -i '/usr/local/bin/fish' /etc/shells | wc -l)" = "0" \) ]; then echo "/usr/local/bin/fish" | sudo tee -a /etc/shells; fi && \
 echo "Installed Fish."
