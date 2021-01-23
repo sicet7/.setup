@@ -17,3 +17,5 @@ fi
 
 . "$SETUP_ROOT/installers/tmux.sh" && \
 . "$SETUP_ROOT/installers/tpm.sh"
+
+. "$SETUP_ROOT/installers/ranger.sh"
