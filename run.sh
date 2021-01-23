@@ -10,8 +10,7 @@ if [ ! -d "$SETUP_BUILD" ]; then
     mkdir -p "$SETUP_BUILD"
 fi
 
-. "$SETUP_ROOT/installers/fish.sh" && \
-. "$SETUP_ROOT/installers/fisher.sh"
+. "$SETUP_ROOT/installers/starship.sh"
 
 . "$SETUP_ROOT/installers/nano.sh"
 
