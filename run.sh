@@ -6,7 +6,7 @@ if [ ! -d "$SETUP_ROOT" ]; then
     exit 0;
 fi
 
-. "$SETUP_ROOT/installers/fish.sh" && \
-. "$SETUP_ROOT/installers/fisher.sh"
+#. "$SETUP_ROOT/installers/fish.sh" && \
+#. "$SETUP_ROOT/installers/fisher.sh"
 
-. "$SETUP_ROOT/installers/nano.sh"
+#. "$SETUP_ROOT/installers/nano.sh"

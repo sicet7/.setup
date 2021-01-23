@@ -12,7 +12,6 @@ cmake . && \
 make && \ 
 sudo make install && \
 cd .. && \
-rm -rfv fish-shell && \
 mkdir -p "$HOME/.config/fish/functions" && \
 cp -rv "$SETUP_ROOT/config/fish/functions/." "$HOME/.config/fish/functions/" && \
 cp -v "$SETUP_ROOT/config/fish/config.fish" "$HOME/.config/fish/config.fish" && \
