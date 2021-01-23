@@ -7,5 +7,5 @@ sh ./autogen.sh && \
 ./configure && \
 make && \
 sudo make install && \
-cp "$SETUP_ROOT/config/.tmux" "$HOME/.tmux.conf" && \
-echo "Install TMUX"
+cp "$SETUP_ROOT/config/.tmux.conf" "$HOME/.tmux.conf" && \
+echo "Installed TMUX"
