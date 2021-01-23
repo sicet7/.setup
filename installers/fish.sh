@@ -1,4 +1,5 @@
 #!/bin/sh
+cd "$SETUP_BUILD" && \
 sudo apt update && \
 sudo apt install -y build-essential \
                     cmake \
