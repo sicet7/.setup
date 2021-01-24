@@ -1,6 +1,6 @@
 #!/bin/sh
 cd "$SETUP_BUILD" && \
-sudo apt install build-essential golang && \
+sudo apt install -y build-essential golang && \
 git clone --depth="1" --branch="go1.15.7" https://github.com/golang/go.git && \
 cd "$SETUP_BUILD/go/src" && \
 bash ./all.bash && \
