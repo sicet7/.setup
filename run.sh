@@ -25,3 +25,5 @@ fi
 . "$SETUP_ROOT/installers/tpm.sh"
 
 . "$SETUP_ROOT/installers/gitconfig.sh"
+
+. "$SETUP_ROOT/installers/nvm.sh"
