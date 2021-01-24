@@ -6,7 +6,7 @@ wget https://raw.githubusercontent.com/sicet7/.setup/master/install.sh -O- | sh
 
 
 ### Todo
-
+* TODO: Install Utilities before all(wget and curl and such)
 * TODO: Install & Setup PHP
 * TODO: Install & Setup Mutagen(https://github.com/mutagen-io/mutagen)
 * TODO: Install Tillix(https://gnunn1.github.io/tilix-web/)
