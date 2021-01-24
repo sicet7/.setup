@@ -14,7 +14,7 @@ if [ \( ! -f "$HOME/.bashrc" \) -o \( "$(grep -i 'GOPATH/bin' ~/.bashrc | wc -l)
 if [ \( ! -f "$HOME/.zshrc" \) -o \( "$(grep -i 'GOPATH/bin' ~/.zshrc | wc -l)" = "0" \) ]; then echo "export PATH=\$PATH:\$GOPATH/bin" >> "$HOME/.zshrc"; fi && \
 if [ \( ! -f "$HOME/.bashrc" \) -o \( "$(grep -i 'export GOROOT=' ~/.bashrc | wc -l)" = "0" \) ]; then echo "export GOROOT=\$HOME/.go/root" >> "$HOME/.bashrc"; fi && \
 if [ \( ! -f "$HOME/.zshrc" \) -o \( "$(grep -i 'export GOROOT=' ~/.zshrc | wc -l)" = "0" \) ]; then echo "export GOROOT=\$HOME/.go/root" >> "$HOME/.zshrc"; fi && \
-if [ \( ! -f "$HOME/.bashrc" \) -o \( "$(grep -i 'HOME/.go/root/bin' ~/.bashrc | wc -l)" = "0" \) ]; then echo "export PATH=\$PATH:\$HOME/.go/root/bin" >> "$HOME/.bashrc"; fi && \
-if [ \( ! -f "$HOME/.zshrc" \) -o \( "$(grep -i 'HOME/.go/root/bin' ~/.zshrc | wc -l)" = "0" \) ]; then echo "export PATH=\$PATH:\$HOME/.go/root/bin" >> "$HOME/.zshrc"; fi && \
+if [ \( ! -f "$HOME/.bashrc" \) -o \( "$(grep -i 'GOROOT/bin' ~/.bashrc | wc -l)" = "0" \) ]; then echo "export PATH=\$PATH:\$GOROOT/bin" >> "$HOME/.bashrc"; fi && \
+if [ \( ! -f "$HOME/.zshrc" \) -o \( "$(grep -i 'GOROOT/bin' ~/.zshrc | wc -l)" = "0" \) ]; then echo "export PATH=\$PATH:\$GOROOT/bin" >> "$HOME/.zshrc"; fi && \
 export PATH="$PATH:$HOME/.go/path/bin:$HOME/.go/root/bin" && \
 echo "Installed golang"

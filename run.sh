@@ -19,7 +19,8 @@ fi
 . "$SETUP_ROOT/installers/nano.sh"
 
 . "$SETUP_ROOT/installers/go.sh" && \
-. "$SETUP_ROOT/installers/lf.sh"
+. "$SETUP_ROOT/installers/lf.sh" && \
+. "$SETUP_ROOT/installers/gotop.sh"
 
 . "$SETUP_ROOT/installers/tmux.sh" && \
 . "$SETUP_ROOT/installers/tpm.sh"
