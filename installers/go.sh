@@ -2,7 +2,7 @@
 sudo rm -rf "$HOME/.go" && \
 mkdir -p "$HOME/.go/path" && \
 sudo apt install -y build-essential golang && \
-rehash && hash -r && \
+hash -r && \
 git clone --depth="1" --branch="go1.15.7" https://github.com/golang/go.git "$HOME/.go/root" && \
 cd "$HOME/.go/root/src" && \
 bash ./all.bash && \
