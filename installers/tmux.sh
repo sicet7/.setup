@@ -7,6 +7,6 @@ sh ./autogen.sh && \
 ./configure && \
 make && \
 sudo make install && \
-cp "$SETUP_ROOT/config/.tmux.conf" "$HOME/.tmux.conf" && \
+cp "$SETUP_ROOT/config/tmux.conf" "$HOME/.tmux.conf" && \
 if [ \( -f "/usr/local/bin/tmux" \) -a \( "$(grep -i '/usr/local/bin/tmux' /etc/shells | wc -l)" = "0" \) ]; then echo "/usr/local/bin/tmux" | sudo tee -a /etc/shells; fi && \
 echo "Installed TMUX"

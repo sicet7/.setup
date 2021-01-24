@@ -11,5 +11,5 @@ rm -rf "$HOME/.nano" && \
 mkdir -p "$HOME/.nano" && \
 git clone -c core.symlinks=true --depth="1" --branch="2020.10.10" https://github.com/scopatz/nanorc.git "$HOME/.nano/syntax" && \
 rm -f "$HOME/.nanorc" && \
-cp -v "$SETUP_ROOT/config/.nanorc" "$HOME/.nanorc" && \
+cp -v "$SETUP_ROOT/config/nanorc" "$HOME/.nanorc" && \
 echo "Installed Nano"

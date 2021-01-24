@@ -1,0 +1,4 @@
+alias mv="mv -iv"
+alias rm="rm -v"
+alias df="df -h"
+alias du="du -hs"

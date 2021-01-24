@@ -1,4 +1,6 @@
 #!/bin/sh
 sudo apt install zsh && \
-if [ ! -f "$HOME/.zshrc" ]; then touch "$HOME/.zshrc"; fi && \
+mkdir -p "$HOME/.zsh" && \
+curl -L git.io/antigen > "$HOME/.zsh/antigen.zsh" && \
+cat "$SETUP_ROOT/config/zshrc" > "$HOME/.zshrc" && \
 echo "Installed zsh."
