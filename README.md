@@ -1,7 +1,7 @@
 # Setup for Ubuntu 20.04
 ### Installation
 ```bash
-wget https://git.io/JtsAD -O- | sh
+wget https://raw.githubusercontent.com/sicet7/.setup/master/install.sh -O- | sh
 ```
 
 
