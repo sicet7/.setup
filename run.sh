@@ -12,6 +12,8 @@ fi
 
 . "$SETUP_ROOT/installers/zsh.sh"
 
+. "$SETUP_ROOT/installers/path.sh"
+
 . "$SETUP_ROOT/installers/aliases.sh"
 
 . "$SETUP_ROOT/installers/starship.sh"
