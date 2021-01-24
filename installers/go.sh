@@ -8,10 +8,12 @@ sudo apt remove -y golang && \
 sudo apt autoremove -y && \
 cp -rv "$SETUP_BUILD/go/bin/." "$HOME/.local/bin/" && \
 export GOPATH="$HOME/.go" && \
-if [ \( -f "$HOME/.bashrc" \) -a \( "$(grep -i 'export GOPATH=' ~/.bashrc | wc -l)" = "0" \) ]; then echo "export GOPATH=\$HOME/.go" >> "$HOME/.bashrc"; fi && \
-if [ \( -f "$HOME/.bashrc" \) -a \( "$(grep -i 'GOPATH/bin' ~/.bashrc | wc -l)" = "0" \) ]; then echo "export PATH=\$PATH:\$GOPATH/bin" >> "$HOME/.bashrc"; fi && \
-if [ \( -f "$HOME/.bashrc" \) -a \( "$(grep -i 'HOME/.local/bin' ~/.bashrc | wc -l)" = "0" \) ]; then echo "export PATH=\$PATH:\$HOME/.local/bin" >> "$HOME/.bashrc"; fi && \
-if [ \( -f "$HOME/.zshrc" \) -a \( "$(grep -i 'export GOPATH=' ~/.zshrc | wc -l)" = "0" \) ]; then echo "export GOPATH=\$HOME/.go" >> "$HOME/.zshrc"; fi && \
-if [ \( -f "$HOME/.zshrc" \) -a \( "$(grep -i 'GOPATH/bin' ~/.zshrc | wc -l)" = "0" \) ]; then echo "export PATH=\$PATH:\$GOPATH/bin" >> "$HOME/.zshrc"; fi && \
-if [ \( -f "$HOME/.zshrc" \) -a \( "$(grep -i 'HOME/.local/bin' ~/.zshrc | wc -l)" = "0" \) ]; then echo "export PATH=\$PATH:\$HOME/.local/bin" >> "$HOME/.zshrc"; fi && \
+if [ \( ! -f "$HOME/.bashrc" \) -o \( "$(grep -i 'export GOPATH=' ~/.bashrc | wc -l)" = "0" \) ]; then echo "export GOPATH=\$HOME/.go" >> "$HOME/.bashrc"; fi && \
+if [ \( ! -f "$HOME/.bashrc" \) -o \( "$(grep -i 'GOPATH/bin' ~/.bashrc | wc -l)" = "0" \) ]; then echo "export PATH=\$PATH:\$GOPATH/bin" >> "$HOME/.bashrc"; fi && \
+if [ \( ! -f "$HOME/.bashrc" \) -o \( "$(grep -i 'HOME/.local/bin' ~/.bashrc | wc -l)" = "0" \) ]; then echo "export PATH=\$PATH:\$HOME/.local/bin" >> "$HOME/.bashrc"; fi && \
+if [ \( ! -f "$HOME/.bashrc" \) -o \( "$(grep -i 'export GOROOT=' ~/.bashrc | wc -l)" = "0" \) ]; then echo "export GOROOT=\$HOME/.local/bin" >> "$HOME/.bashrc"; fi && \
+if [ \( ! -f "$HOME/.zshrc" \) -o \( "$(grep -i 'export GOPATH=' ~/.zshrc | wc -l)" = "0" \) ]; then echo "export GOPATH=\$HOME/.go" >> "$HOME/.zshrc"; fi && \
+if [ \( ! -f "$HOME/.zshrc" \) -o \( "$(grep -i 'GOPATH/bin' ~/.zshrc | wc -l)" = "0" \) ]; then echo "export PATH=\$PATH:\$GOPATH/bin" >> "$HOME/.zshrc"; fi && \
+if [ \( ! -f "$HOME/.zshrc" \) -o \( "$(grep -i 'export GOROOT=' ~/.zshrc | wc -l)" = "0" \) ]; then echo "export GOROOT=\$HOME/.local/bin" >> "$HOME/.zshrc"; fi && \
+if [ \( ! -f "$HOME/.zshrc" \) -o \( "$(grep -i 'HOME/.local/bin' ~/.zshrc | wc -l)" = "0" \) ]; then echo "export PATH=\$PATH:\$HOME/.local/bin" >> "$HOME/.zshrc"; fi && \
 echo "Installed golang"
