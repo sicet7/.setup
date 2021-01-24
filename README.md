@@ -7,8 +7,6 @@ wget https://raw.githubusercontent.com/sicet7/.setup/master/install.sh -O- | sh
 
 ### Todo
 
-* TODO: Install & Setup Docker
-* TODO: Install & Setup Docker-Compose(https://github.com/docker/compose)
 * TODO: Install & Setup PHP
 * TODO: Install & Setup Mutagen(https://github.com/mutagen-io/mutagen)
 * TODO: Install Tillix(https://gnunn1.github.io/tilix-web/)
@@ -18,6 +16,8 @@ wget https://raw.githubusercontent.com/sicet7/.setup/master/install.sh -O- | sh
 
 ### Done
 
+> * DONE: Install & Setup Docker-Compose(https://github.com/docker/compose)
+> * DONE: Install & Setup Docker
 > * DONE: Install & Setup Tmux(https://github.com/tmux/tmux)
 > * DONE: Install & Setup Nano
 > * DONE: Install Node Version Manager(https://github.com/nvm-sh/nvm)

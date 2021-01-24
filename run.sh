@@ -30,3 +30,6 @@ fi
 . "$SETUP_ROOT/installers/gitconfig.sh"
 
 . "$SETUP_ROOT/installers/nvm.sh"
+
+. "$SETUP_ROOT/installers/docker.sh" && \
+. "$SETUP_ROOT/installers/docker-compose.sh"
