@@ -2,7 +2,7 @@
 cd "$SETUP_BUILD" && \
 git clone --depth="1" --branch="3.1c" https://github.com/tmux/tmux.git && \
 cd tmux && \
-sudo apt install -y autoconf automake pkg-config libevent-dev bison xclip && \
+sudo apt install -y build-essential autoconf automake pkg-config libevent-dev bison xclip && \
 sh ./autogen.sh && \
 ./configure && \
 make && \
