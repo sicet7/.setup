@@ -4,8 +4,8 @@ sudo apt install build-essential golang && \
 git clone --depth="1" --branch="go1.15.7" https://github.com/golang/go.git && \
 cd "$SETUP_BUILD/go/src" && \
 bash ./all.bash && \
-sudo apt remove golang && \
-sudo apt autoremove && \
+sudo apt remove -y golang && \
+sudo apt autoremove -y && \
 cp -rv "$SETUP_BUILD/go/bin/." "$HOME/.local/bin/" && \
 export GOPATH="$HOME/.go" && \
 if [ \( -f "$HOME/.bashrc" \) -a \( "$(grep -i 'export GOPATH=' ~/.bashrc | wc -l)" = "0" \) ]; then echo "export GOPATH=\$HOME/.go" >> "$HOME/.bashrc"; fi && \
