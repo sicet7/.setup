@@ -10,6 +10,8 @@ if [ ! -d "$SETUP_BUILD" ]; then
     mkdir -p "$SETUP_BUILD"
 fi
 
+. "$SETUP_ROOT/installers/utilities.sh"
+
 . "$SETUP_ROOT/installers/zsh.sh"
 
 . "$SETUP_ROOT/installers/path.sh"
