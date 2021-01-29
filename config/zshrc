@@ -1,8 +1,3 @@
-source ~/.zsh/antigen.zsh
-
-antigen use oh-my-zsh
-
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-antigen apply
+if [ -f "$HOME/.sharedrc" ]; then
+    source ~/.sharedrc
+fi

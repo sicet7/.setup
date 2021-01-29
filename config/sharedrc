@@ -1,0 +1,53 @@
+if [ -d "$HOME/bin" ]; then
+    export PATH="$PATH:$HOME/bin"
+fi
+
+if [ -d "$HOME/.local/bin" ]; then
+    export PATH="$PATH:$HOME/.local/bin"
+fi
+
+if [ -d "$HOME/.go/root" ]; then
+    export GOROOT="$HOME/.go/root"
+fi
+
+if [ -n "$GOROOT" ]; then
+    if [ -d "$GOROOT/bin" ]; then
+        export PATH="$PATH:$GOROOT/bin"
+    fi
+fi
+
+if [ -d "$HOME/.go/path" ]; then
+    export GOPATH="$HOME/.go/path"
+fi
+
+if [ -n "$GOPATH" ]; then
+    if [ -d "$GOPATH/bin" ]; then
+        export PATH="$PATH:$GOPATH/bin"
+    fi
+fi
+
+if [ -n "$ZSH_VERSION" ]; then
+    #if we are running ZSH
+    if [ -f "$HOME/.aliases" ]; then
+        source $HOME/.aliases
+    fi
+
+    source ~/.zsh/antigen.zsh
+
+    antigen use oh-my-zsh
+
+    antigen bundle zsh-users/zsh-completions
+    antigen bundle zsh-users/zsh-syntax-highlighting
+
+    antigen apply
+    
+    eval "$(starship init zsh)"
+fi
+
+if [ -n "$BASH_VERSION" ]; then
+    #if we are running bash
+    if [ -f "$HOME/.aliases" ]; then
+        . ~/.aliases
+    fi
+    eval "$(starship init bash)"
+fi
