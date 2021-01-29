@@ -1,3 +1,7 @@
+if [ -f "/usr/local/bin/nano" ]; then
+    export EDITOR="/usr/local/bin/nano"
+fi
+
 if [ -d "$HOME/bin" ]; then
     export PATH="$PATH:$HOME/bin"
 fi
@@ -25,6 +29,21 @@ if [ -n "$GOPATH" ]; then
         export PATH="$PATH:$GOPATH/bin"
     fi
 fi
+
+#Change directory with lf by typing "rg"
+rg () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
 
 if [ -n "$ZSH_VERSION" ]; then
     #if we are running ZSH
