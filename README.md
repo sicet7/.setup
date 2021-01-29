@@ -5,10 +5,11 @@ wget https://raw.githubusercontent.com/sicet7/.setup/master/install.sh -O- | sh
 ```
 
 ### FIX
-* FIX: Missing NVM from ".zshrc"
+* ~~FIX: Missing NVM from ".zshrc"~~ Fixed
 
 ### Todo
 * TODO: Install & Setup PHP
+* TODO: Install & Setup Composer
 * TODO: Install & Setup Mutagen(https://github.com/mutagen-io/mutagen)
 * TODO: Install Tillix(https://gnunn1.github.io/tilix-web/)
 * TODO: Install & Setup NeoVim(https://github.com/neovim/neovim)
