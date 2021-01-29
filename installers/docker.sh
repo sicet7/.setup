@@ -1,6 +1,5 @@
 #!/bin/sh
 sudo apt remove -y docker docker-engine docker.io containerd runc && \
-sudo apt update && \
 sudo apt install -y apt-transport-https \
                     ca-certificates \
                     curl \

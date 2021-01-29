@@ -11,7 +11,7 @@ wget https://raw.githubusercontent.com/sicet7/.setup/master/install.sh -O- | sh
 * TODO: Install & Setup PHP
 * TODO: Install & Setup Composer
 * TODO: Install & Setup Mutagen(https://github.com/mutagen-io/mutagen)
-* TODO: Install Tillix(https://gnunn1.github.io/tilix-web/)
+* TODO: Install Tillix(https://github.com/gnunn1/tilix/)
 * TODO: Install & Setup NeoVim(https://github.com/neovim/neovim)
 * TODO: Optional dependencies
 
