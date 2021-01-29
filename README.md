@@ -4,9 +4,10 @@
 wget https://raw.githubusercontent.com/sicet7/.setup/master/install.sh -O- | sh
 ```
 
+### FIX
+* FIX: Missing NVM from ".zshrc"
 
 ### Todo
-* TODO: Install Utilities before all(wget and curl and such)
 * TODO: Install & Setup PHP
 * TODO: Install & Setup Mutagen(https://github.com/mutagen-io/mutagen)
 * TODO: Install Tillix(https://gnunn1.github.io/tilix-web/)
@@ -16,6 +17,7 @@ wget https://raw.githubusercontent.com/sicet7/.setup/master/install.sh -O- | sh
 
 ### Done
 
+> * DONE: Install Utilities before all(wget and curl and such)
 > * DONE: Install & Setup Docker-Compose(https://github.com/docker/compose)
 > * DONE: Install & Setup Docker
 > * DONE: Install & Setup Tmux(https://github.com/tmux/tmux)
