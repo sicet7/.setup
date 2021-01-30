@@ -30,21 +30,6 @@ if [ -n "$GOPATH" ]; then
     fi
 fi
 
-#Change directory with lf by typing "rg"
-rg () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
-                cd "$dir"
-            fi
-        fi
-    fi
-}
-
 if [ -n "$ZSH_VERSION" ]; then
     #if we are running ZSH
     if [ -f "$HOME/.aliases" ]; then
@@ -70,3 +55,35 @@ if [ -n "$BASH_VERSION" ]; then
     fi
     eval "$(starship init bash)"
 fi
+
+# Functions
+
+rg () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+
+change () {
+    if [ $# -eq 2 ]; then
+        local name="$1"
+        local version="$2"
+        local program="/usr/bin/$name$version"
+
+        if [ -f "$program" ]; then
+            sudo update-alternatives --set "$name" "$program"
+            return;
+        fi
+        echo "Failed to find valid version.";
+    fi
+    echo "Missing arguments.";
+    echo "change [name] [version]";
+}
