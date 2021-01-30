@@ -8,8 +8,6 @@ wget https://raw.githubusercontent.com/sicet7/.setup/master/install.sh -O- | sh
 * ~~FIX: Missing NVM from ".zshrc"~~ Fixed
 
 ### Todo
-* TODO: Install & Setup PHP
-* TODO: Install & Setup Composer
 * TODO: Install & Setup Mutagen(https://github.com/mutagen-io/mutagen)
 * TODO: Install Tillix(https://github.com/gnunn1/tilix/)
 * TODO: Install & Setup NeoVim(https://github.com/neovim/neovim)
@@ -18,6 +16,8 @@ wget https://raw.githubusercontent.com/sicet7/.setup/master/install.sh -O- | sh
 
 ### Done
 
+> * DONE: Install & Setup PHP
+> * DONE: Install & Setup Composer
 > * DONE: Install Utilities before all(wget and curl and such)
 > * DONE: Install & Setup Docker-Compose(https://github.com/docker/compose)
 > * DONE: Install & Setup Docker
