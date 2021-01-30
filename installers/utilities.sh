@@ -1,5 +1,6 @@
 #!/bin/sh
 sudo apt update && sudo apt install -y \
+                        software-properties-common \
                         bash \
                         wget \
                         curl \
