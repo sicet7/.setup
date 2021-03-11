@@ -4,7 +4,7 @@
 wget https://raw.githubusercontent.com/sicet7/.setup/master/install.sh -O- | sh
 ```
 
-### Optional Programs
+### Optional
 
 #### Flameshot
 > The following script will install flameshot and configure it to run when the "Print Screen" button is pressed on the keyboard.
