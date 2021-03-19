@@ -5,13 +5,12 @@
 * ~~FIX: `go get github.com/xxxserxxx/gotop/cmd/gotop: module github.com/xxxserxxx/gotop@upgrade found (v1.0.1), but does not contain package github.com/xxxserxxx/gotop/cmd/gotop`~~
 
 ## Todo
-* TODO: Install & Setup Mutagen(https://github.com/mutagen-io/mutagen)
-* TODO: Install Tillix(https://github.com/gnunn1/tilix/)
-* TODO: Optional dependencies
+* TODO: More Optionals
 
 
 ## Done
 
+> * DONE: Install & Setup Mutagen(https://github.com/mutagen-io/mutagen)
 > * DONE: Install & Setup NeoVim(https://github.com/neovim/neovim)
 > * DONE: Install & Setup PHP
 > * DONE: Install & Setup Composer
@@ -31,6 +30,7 @@
 
 ## Scraped
 
+> * SCRAPED: Install Tillix(https://github.com/gnunn1/tilix/) - Requires GUI
 > * REMOVED: Install & Setup Ranger(https://github.com/ranger/ranger) - Replaced with LF
 > * REMOVED: Install & Setup Fish(https://github.com/fish-shell/fish-shell) - Replaced with zsh
 > * SCRAPED: MAC Support

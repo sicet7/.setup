@@ -10,3 +10,4 @@ sudo apt update && sudo apt install -y \
                         openvpn \
                         openresolv \
                         wireguard
+echo "Installed utilities"
