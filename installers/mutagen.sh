@@ -1,6 +1,7 @@
 #!/bin/sh
 cd "$SETUP_BUILD" || exit 1;
 git clone --depth="1" --branch="v0.11.8" https://github.com/mutagen-io/mutagen.git
+cd mutagen || exit 1;
 go run ./scripts/build.go --mode="local"
 
 if [ ! -f "$SETUP_BUILD/mutagen/build/mutagen" ]; then
