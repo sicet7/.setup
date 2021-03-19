@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo add-apt-repository -y ppa:ondrej/php && \
+sudo add-apt-repository -y ppa:ondrej/php
 sudo apt install -y php8.0-cli \
                     php8.0-amqp \
                     php8.0-bcmath \
@@ -63,5 +63,5 @@ sudo apt install -y php8.0-cli \
                     php7.2-soap \
                     php7.2-xml \
                     php7.2-xsl \
-                    php7.2-zip && \
+                    php7.2-zip
 echo "Installed php"
