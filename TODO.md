@@ -2,6 +2,7 @@
 
 ## FIX
 * ~~FIX: Missing NVM from ".zshrc"~~ Fixed
+* FIX: `go get github.com/xxxserxxx/gotop/cmd/gotop: module github.com/xxxserxxx/gotop@upgrade found (v1.0.1), but does not contain package github.com/xxxserxxx/gotop/cmd/gotop`
 
 ## Todo
 * TODO: Install & Setup Mutagen(https://github.com/mutagen-io/mutagen)
