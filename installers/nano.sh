@@ -3,7 +3,7 @@ cd "$SETUP_BUILD" && \
 wget https://nano-editor.org/dist/v5/nano-5.5.tar.gz && \
 tar -zxvf nano-5.5.tar.gz && \
 cd nano-5.5 && \
-sudo apt install build-essential && \
+sudo apt install -y build-essential && \
 ./configure && \
 make && \
 sudo make install && \
