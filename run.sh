@@ -20,6 +20,7 @@ fi
 . "$SETUP_ROOT/installers/gotop.sh"
 . "$SETUP_ROOT/installers/tmux.sh"
 . "$SETUP_ROOT/installers/tpm.sh"
+. "$SETUP_ROOT/installers/mutagen.sh"
 . "$SETUP_ROOT/installers/gitconfig.sh"
 . "$SETUP_ROOT/installers/nvm.sh"
 . "$SETUP_ROOT/installers/docker.sh"

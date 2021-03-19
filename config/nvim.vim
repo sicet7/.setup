@@ -9,7 +9,6 @@ call plug#begin('~/.config/nvim/plugged')
     " plugins go here
     Plug 'preservim/nerdtree'
     Plug 'airblade/vim-gitgutter'
-    Plug 'doums/darcula'
     Plug 'alvan/vim-php-manual', {'for': 'php'}
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
