@@ -4,7 +4,7 @@ SETUP_ROOT="$EXEC_PATH/.setup";
 sudo add-apt-repository ppa:git-core/ppa && \
 sudo apt update && \
 sudo apt install -y git && \
-git clone --depth="1" --branch="master" https://github.com/sicet7/.setup.git $SETUP_ROOT && \
+git clone --depth="1" --branch="develop" https://github.com/sicet7/.setup.git $SETUP_ROOT && \
 . "$SETUP_ROOT/run.sh" && \
 rm -rfv "$SETUP_ROOT" && \
 echo "Done :-)"
