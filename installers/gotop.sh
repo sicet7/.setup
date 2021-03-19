@@ -16,6 +16,10 @@ if [ ! -d "$HOME/.local/bin" ]; then
     mkdir -p "$HOME/.local/bin"
 fi
 
-exit 1;
+if [ ! -f "$SETUP_BUILD/gotop/gotop" ]; then
+    echo "gotop build failed"
+    exit 1;
+fi
+cp "$SETUP_BUILD/gotop/gotop" "$HOME/.local/bin/gotop" && chmod +x "$HOME/.local/bin/gotop"
 
 echo "Installed gotop"
