@@ -9,5 +9,6 @@ sudo apt update && sudo apt install -y \
                         ca-certificates \
                         openvpn \
                         openresolv \
-                        wireguard
+                        wireguard \
+                        watch
 echo "Installed utilities"
