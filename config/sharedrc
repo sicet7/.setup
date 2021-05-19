@@ -30,6 +30,10 @@ if [ -n "$GOPATH" ]; then
     fi
 fi
 
+if [ -d "$HOME/.config/composer/vendor/bin" ]; then
+    export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+fi
+
 if [ -n "$ZSH_VERSION" ]; then
     #if we are running ZSH
     if [ -f "$HOME/.aliases" ]; then
