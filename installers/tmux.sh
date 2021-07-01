@@ -1,6 +1,6 @@
 #!/bin/sh
 cd "$SETUP_BUILD" || exit 1;
-git clone --depth="1" --branch="3.1c" https://github.com/tmux/tmux.git
+git clone --depth="1" --branch="3.2a" https://github.com/tmux/tmux.git
 cd tmux || exit 1;
 sudo apt install -y build-essential autoconf automake pkg-config libevent-dev bison xclip ncurses-dev
 sh ./autogen.sh
