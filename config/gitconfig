@@ -11,6 +11,9 @@
     diww = "!f() { git diff -w \"$1^\" \"$1\"; }; f"
     cho = checkout
     st = status
+    stauts = status
+    stuats = status
+    sta = status
     chp = cherry-pick
 [core]
     fileMode = false
