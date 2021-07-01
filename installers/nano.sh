@@ -1,6 +1,6 @@
 #!/bin/sh
 cd "$SETUP_BUILD" || exit 1;
-wget https://nano-editor.org/dist/v5/nano-5.5.tar.gz
+wget https://nano-editor.org/dist/v5/nano-5.8.tar.gz
 tar -zxvf nano-5.5.tar.gz
 cd nano-5.5 || exit 1;
 sudo apt install -y build-essential
