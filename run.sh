@@ -3,7 +3,7 @@ set -e
 
 if [ ! -d "$SETUP_ROOT" ]; then
     echo "Failed to find setup files.";
-    exit 0;
+    exit 1;
 fi
 
 SETUP_BUILD="$SETUP_ROOT/build";
