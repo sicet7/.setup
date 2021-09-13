@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 cd "$SETUP_BUILD" || exit 1;
 wget https://nano-editor.org/dist/v5/nano-5.8.tar.gz
 tar -zxvf nano-5.8.tar.gz
