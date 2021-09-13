@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 sudo rm -rf "$HOME/.go"
 mkdir -p "$HOME/.go/path"
 sudo apt install -y build-essential golang
