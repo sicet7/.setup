@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 sudo add-apt-repository -y ppa:ondrej/php
 sudo apt install -y php8.0-cli \
                     php8.0-amqp \
