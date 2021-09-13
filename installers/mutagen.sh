@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 cd "$SETUP_BUILD" || exit 1;
 git clone --depth="1" --branch="v0.11.8" https://github.com/mutagen-io/mutagen.git
 cd mutagen || exit 1;
