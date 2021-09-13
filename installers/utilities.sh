@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 sudo apt update && sudo apt install -y \
                         software-properties-common \
                         bash \
