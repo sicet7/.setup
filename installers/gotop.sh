@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 cd "$SETUP_BUILD" || exit 1;
 VERSION="4.1.1";
 git clone --depth="1" --branch="v$VERSION" https://github.com/xxxserxxx/gotop.git
