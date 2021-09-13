@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 cd "$SETUP_BUILD" || exit 1;
 git clone --depth="1" --branch="v0.4.4" https://github.com/neovim/neovim.git
 cd neovim || exit 1;
