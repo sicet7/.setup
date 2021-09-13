@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 if [ ! -d "$SETUP_ROOT" ]; then
     echo "Failed to find setup files.";
