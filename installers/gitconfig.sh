@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 echo "Starting gitconfig setup."
 read -p"Please enter name: " name </dev/tty
 read -p"Please enter email: " email </dev/tty
