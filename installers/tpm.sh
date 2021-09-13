@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 cd "$SETUP_BUILD" || exit 1;
 rm -rf "$HOME/.tmux/plugins/tpm"
 mkdir -p "$HOME/.tmux/plugins"
