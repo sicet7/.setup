@@ -13,11 +13,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
-colorscheme darcula
+" colorscheme darcula
 set termguicolors
 
 set number
-set relativenumber
+" set relativenumber
 set autoindent
 set smartindent
 
