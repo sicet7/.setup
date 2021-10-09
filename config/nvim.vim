@@ -41,5 +41,12 @@ let NERDTreeMapActivateNode='<space>'
 let g:NERDTreeWinSize=40
 
 " remap open button to <LCTRL>+G
-map <C-g> :NERDTreeToggle<CR>
+noremap <C-Space> :NERDTreeToggle<CR>
+inoremap <C-Space> <Esc>:NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" custom mappings
+nnoremap <silent> <C-Up> :wincmd k<CR>
+nnoremap <silent> <C-Down> :wincmd j<CR>
+nnoremap <silent> <C-Left> :wincmd h<CR>
+nnoremap <silent> <C-Right> :wincmd l<CR>
