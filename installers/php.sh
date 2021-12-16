@@ -1,7 +1,25 @@
 #!/bin/sh
 set -e
 sudo add-apt-repository -y ppa:ondrej/php
-sudo apt install -y php8.0-cli \
+sudo apt install -y php8.1-cli \
+                    php8.1-amqp \
+                    php8.1-bcmath \
+                    php8.1-bz2 \
+                    php8.1-curl \
+                    php8.1-gd \
+                    php8.1-imap \
+                    php8.1-intl \
+                    php8.1-ldap \
+                    php8.1-mbstring \
+                    php8.1-mysql \
+                    php8.1-pgsql \
+                    php8.1-soap \
+                    php8.1-xml \
+                    php8.1-xsl \
+                    php8.1-zip \
+                    php8.1-redis \
+                    php8.1-mongodb \
+                    php8.0-cli \
                     php8.0-amqp \
                     php8.0-bcmath \
                     php8.0-bz2 \
@@ -17,6 +35,8 @@ sudo apt install -y php8.0-cli \
                     php8.0-xml \
                     php8.0-xsl \
                     php8.0-zip \
+                    php8.0-redis \
+                    php8.0-mongodb \
                     php7.4-cli \
                     php7.4-amqp \
                     php7.4-bcmath \
@@ -33,36 +53,6 @@ sudo apt install -y php8.0-cli \
                     php7.4-xml \
                     php7.4-xsl \
                     php7.4-zip \
-                    php7.3-cli \
-                    php7.3-amqp \
-                    php7.3-bcmath \
-                    php7.3-bz2 \
-                    php7.3-curl \
-                    php7.3-gd \
-                    php7.3-imap \
-                    php7.3-intl \
-                    php7.3-ldap \
-                    php7.3-mbstring \
-                    php7.3-mysql \
-                    php7.3-pgsql \
-                    php7.3-soap \
-                    php7.3-xml \
-                    php7.3-xsl \
-                    php7.3-zip \
-                    php7.2-cli \
-                    php7.2-amqp \
-                    php7.2-bcmath \
-                    php7.2-bz2 \
-                    php7.2-curl \
-                    php7.2-gd \
-                    php7.2-imap \
-                    php7.2-intl \
-                    php7.2-ldap \
-                    php7.2-mbstring \
-                    php7.2-mysql \
-                    php7.2-pgsql \
-                    php7.2-soap \
-                    php7.2-xml \
-                    php7.2-xsl \
-                    php7.2-zip
+                    php7.4-redis \
+                    php7.4-mongodb
 echo "Installed php"
