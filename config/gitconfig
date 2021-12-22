@@ -22,3 +22,5 @@
     ff = only
 [init]
     defaultBranch = master
+[pager]
+    branch = false
