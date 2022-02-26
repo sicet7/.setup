@@ -4,7 +4,7 @@ cd "$SETUP_BUILD" || exit 1;
 wget https://nano-editor.org/dist/v5/nano-5.8.tar.gz
 tar -zxvf nano-5.8.tar.gz
 cd nano-5.8 || exit 1;
-sudo apt install -y build-essential
+sudo apt install -y build-essential libncurses-dev
 ./configure
 make
 sudo make install
