@@ -1,5 +1,5 @@
 #!/bin/sh
 set -e
-curl -fsSL https://starship.rs/install.sh | sh --yes
+wget https://starship.rs/install.sh -O- | sh --yes
 #sh -c "$(curl -fsSL https://starship.rs/install.sh)" --yes
 echo "Installed Starship prompt."
