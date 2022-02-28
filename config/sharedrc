@@ -87,6 +87,10 @@ change () {
 
         if [ -f "$program" ]; then
             sudo update-alternatives --set "$name" "$program"
+            if [ "$name" = "php" ]; then
+                sudo update-alternatives --set "phpize" "$phpizeProgram"
+                sudo update-alternatives --set "php-config" "$phpConfigProgram"
+            fi
             return;
         fi
         echo "Failed to find valid version.";
