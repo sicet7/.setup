@@ -84,6 +84,8 @@ change () {
         local name="$1"
         local version="$2"
         local program="/usr/bin/$name$version"
+        local phpizeProgram="/usr/bin/phpize$version"
+        local phpConfigProgram="/usr/bin/php-config$version"
 
         if [ -f "$program" ]; then
             sudo update-alternatives --set "$name" "$program"
