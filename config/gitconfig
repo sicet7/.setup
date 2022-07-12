@@ -20,6 +20,8 @@
     symlinks = false
 [pull]
     ff = only
+[push]
+    autoSetupRemote = true
 [init]
     defaultBranch = master
 [pager]
