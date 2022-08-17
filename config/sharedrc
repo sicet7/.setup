@@ -30,9 +30,19 @@ if [ -n "$GOPATH" ]; then
     fi
 fi
 
-if [ -d "$HOME/.config/composer/vendor/bin" ]; then
-    export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+
+PHP_VERSION=$(php -r 'echo PHP_MAJOR_VERSION . "." . PHP_MINOR_VERSION;');
+if [ ! -d "$HOME/.config/composer/$PHP_VERSION" ]; then
+    mkdir -p "$HOME/.config/composer/$PHP_VERSION"
 fi
+
+ln -sf "$HOME/.config/composer/$PHP_VERSION" "$HOME/.config/composer/current"
+
+if [ -d "$HOME/.config/composer/current/vendor/bin" ]; then
+    export PATH="$PATH:$HOME/.config/composer/current/vendor/bin"
+fi
+
+export COMPOSER_HOME="$HOME/.config/composer/current"
 
 if [ -n "$ZSH_VERSION" ]; then
     #if we are running ZSH
@@ -92,6 +102,11 @@ change () {
             if [ "$name" = "php" ]; then
                 sudo update-alternatives --set "phpize" "$phpizeProgram"
                 sudo update-alternatives --set "php-config" "$phpConfigProgram"
+                if [ ! -d "$HOME/.config/composer/$version" ]; then
+                    mkdir -p "$HOME/.config/composer/$version"
+                fi
+                rm "$HOME/.config/composer/current"
+                ln -sf "$HOME/.config/composer/$version" "$HOME/.config/composer/current"
             fi
             return;
         fi
@@ -100,3 +115,6 @@ change () {
     echo "Missing arguments.";
     echo "change [name] [version]";
 }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
