@@ -23,6 +23,7 @@ sudo apt install -y php8.1-cli \
                     php8.0-cli \
                     php8.0-dev \
                     php8.0-amqp \
+                    php8.0-mcrypt \
                     php8.0-bcmath \
                     php8.0-bz2 \
                     php8.0-curl \
@@ -42,6 +43,7 @@ sudo apt install -y php8.1-cli \
                     php7.4-cli \
                     php7.4-dev \
                     php7.4-amqp \
+                    php7.4-mcrypt \
                     php7.4-bcmath \
                     php7.4-bz2 \
                     php7.4-curl \
