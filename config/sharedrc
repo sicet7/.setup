@@ -36,6 +36,7 @@ if [ ! -d "$HOME/.config/composer/$PHP_VERSION" ]; then
     mkdir -p "$HOME/.config/composer/$PHP_VERSION"
 fi
 
+rm "$HOME/.config/composer/current"
 ln -sf "$HOME/.config/composer/$PHP_VERSION" "$HOME/.config/composer/current"
 
 if [ -d "$HOME/.config/composer/current/vendor/bin" ]; then
@@ -105,8 +106,14 @@ change () {
                 if [ ! -d "$HOME/.config/composer/$version" ]; then
                     mkdir -p "$HOME/.config/composer/$version"
                 fi
-                rm "$HOME/.config/composer/current"
-                ln -sf "$HOME/.config/composer/$version" "$HOME/.config/composer/current"
+                if [ -d "$HOME/.config/composer/current" ]; then
+                    rm "$HOME/.config/composer/current"
+                    ln -sf "$HOME/.config/composer/$version" "$HOME/.config/composer/current"
+                fi
+                if [ -d "/usr/share/php$version" ]; then
+                    sudo rm /usr/share/php
+                    sudo ln -sf "/usr/share/php$version" /usr/share/php
+                fi
             fi
             return;
         fi
