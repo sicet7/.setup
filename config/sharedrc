@@ -36,11 +36,15 @@ if [ ! -d "$HOME/.config/composer/$PHP_VERSION" ]; then
     mkdir -p "$HOME/.config/composer/$PHP_VERSION"
 fi
 
-rm "$HOME/.config/composer/current"
-ln -sf "$HOME/.config/composer/$PHP_VERSION" "$HOME/.config/composer/current"
+if [ ! -L "$HOME/.config/composer/current" ] || [ "$(readlink -f "$HOME/.config/composer/current")" != ""$HOME/.config/composer/$PHP_VERSION"" ]; then
+    if [ -L "$HOME/.config/composer/current" ]; then
+        rm "$HOME/.config/composer/current"
+    fi
+    ln -sf "$HOME/.config/composer/$PHP_VERSION" "$HOME/.config/composer/current"
 
-if [ -d "$HOME/.config/composer/current/vendor/bin" ]; then
-    export PATH="$PATH:$HOME/.config/composer/current/vendor/bin"
+    if [ -d "$HOME/.config/composer/current/vendor/bin" ]; then
+        export PATH="$PATH:$HOME/.config/composer/current/vendor/bin"
+    fi
 fi
 
 export COMPOSER_HOME="$HOME/.config/composer/current"
