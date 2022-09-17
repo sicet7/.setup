@@ -4,7 +4,7 @@ sudo rm -rf "$HOME/.go"
 mkdir -p "$HOME/.go/path"
 sudo apt install -y build-essential golang
 hash -r
-git clone --depth="1" --branch="go1.18.5" https://github.com/golang/go.git "$HOME/.go/root"
+git clone --depth="1" --branch="go1.19.1" https://github.com/golang/go.git "$HOME/.go/root"
 cd "$HOME/.go/root/src" || exit 1;
 bash ./all.bash
 sudo apt remove -y golang
