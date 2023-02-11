@@ -28,5 +28,5 @@ fi
 . "$SETUP_ROOT/installers/docker-compose.sh"
 . "$SETUP_ROOT/installers/php.sh"
 . "$SETUP_ROOT/installers/composer.sh"
-. "$SETUP_ROOT/installers/nvim.sh"
+#. "$SETUP_ROOT/installers/nvim.sh"
 . "$SETUP_ROOT/installers/sharedrc.sh"
