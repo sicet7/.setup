@@ -1,5 +1,4 @@
 #!/bin/sh
 set -e
-go clean -cache -modcache -i -r
-env CGO_ENABLED=0 GO111MODULE=on go get -u -ldflags="-s -w" github.com/gokcehan/lf
+env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
 echo "Installed LF"
