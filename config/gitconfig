@@ -15,6 +15,7 @@
     stuats = status
     sta = status
     chp = cherry-pick
+    tree = log --graph
 [core]
     fileMode = false
     symlinks = false
