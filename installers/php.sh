@@ -20,6 +20,7 @@ sudo apt install -y php8.2-cli \
                     php8.2-zip \
                     php8.2-redis \
                     php8.2-mongodb \
+                    php8.2-sqlite3 \
                     php8.1-cli \
                     php8.1-dev \
                     php8.1-amqp \
@@ -39,6 +40,7 @@ sudo apt install -y php8.2-cli \
                     php8.1-zip \
                     php8.1-redis \
                     php8.1-mongodb \
+                    php8.1-sqlite3 \
                     php8.0-cli \
                     php8.0-dev \
                     php8.0-amqp \
@@ -59,24 +61,5 @@ sudo apt install -y php8.2-cli \
                     php8.0-zip \
                     php8.0-redis \
                     php8.0-mongodb \
-                    php7.4-cli \
-                    php7.4-dev \
-                    php7.4-amqp \
-                    php7.4-mcrypt \
-                    php7.4-bcmath \
-                    php7.4-bz2 \
-                    php7.4-curl \
-                    php7.4-gd \
-                    php7.4-imap \
-                    php7.4-intl \
-                    php7.4-ldap \
-                    php7.4-mbstring \
-                    php7.4-mysql \
-                    php7.4-pgsql \
-                    php7.4-soap \
-                    php7.4-xml \
-                    php7.4-xsl \
-                    php7.4-zip \
-                    php7.4-redis \
-                    php7.4-mongodb
+                    php8.0-sqlite3
 echo "Installed php"
