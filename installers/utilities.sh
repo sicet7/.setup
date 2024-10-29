@@ -10,7 +10,6 @@ sudo apt update && sudo apt install -y \
                         apt-transport-https \
                         ca-certificates \
                         openvpn \
-                        openresolv \
                         wireguard \
                         watch
 echo "Installed utilities"
